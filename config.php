@@ -7,11 +7,14 @@ $dbName = 'siteclientes';
 
 $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
+/* Testando se a conexão funcionava
+
 if($conexao -> connect_errno){
     echo "Erro";
 }
 else{
     echo "Conexão efetuada com sucesso";
 }
+*/
 
 ?>

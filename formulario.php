@@ -1,11 +1,46 @@
 <?php
 
 if(isset($_POST['submit'])){
-    print_r($_POST['nome']);
+
+    /* Testando retorno dos dados
+
+    print_r('Nome: ' . $_POST['nome']);
     print_r('<br>');
-    print_r($_POST['email']);
+    print_r('E-mail: ' . $_POST['email']);
     print_r('<br>');
-    print_r($_POST['telefone']);
+    print_r('Senha: ' . $_POST['senha']);
+    print_r('<br>');
+    print_r('Telefone: ' . $_POST['telefone']);
+    print_r('<br>');
+    print_r('Gênero: ' . $_POST['genero']);
+    print_r('<br>');
+    print_r('Data de Nascimento: ' . $_POST['data_nascimento']);
+    print_r('<br>');
+    print_r('Endereço: ' . $_POST['endereco']);
+    print_r('<br>');
+    print_r('Cidade: ' . $_POST['cidade']);
+    print_r('<br>');
+    print_r('Estado: ' . $_POST['estado']);
+    print_r('<br>');
+    */
+
+    //Preparando os dados para ir para o banco
+
+    include_once('config.php');
+
+    $nomecompleto = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $telefone = $_POST['telefone'];
+    $genero = $_POST['genero'];
+    $data_nascimento = $_POST['data_nascimento'];
+    $endereco = $_POST['endereco'];
+    $cidade = $_POST['cidade'];
+    $estado = $_POST['estado'];
+
+    $result = mysqli_query($conexao, "INSERT INTO formulariocadastro(nomecompleto, email, senha, telefone, genero, data_nascimento, endereco, cidade, estado)VALUES('$nomecompleto', '$email', '$senha', $telefone, '$genero', '$data_nascimento', '$endereco', '$cidade', '$estado')");
+
+
 }
 
 ?>
@@ -17,7 +52,7 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário</title>
-    <link rel="stylesheet" href="./stylesforms.css">
+    <link rel="stylesheet" href="stylesforms.css">
 </head>
 <body>
     <div class="box">
