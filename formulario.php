@@ -39,6 +39,7 @@ if(isset($_POST['submit'])){
     $estado = $_POST['estado'];
 
     $result = mysqli_query($conexao, "INSERT INTO formulariocadastro(nomecompleto, email, senha, telefone, genero, data_nascimento, endereco, cidade, estado)VALUES('$nomecompleto', '$email', '$senha', $telefone, '$genero', '$data_nascimento', '$endereco', '$cidade', '$estado')");
+    header('Location: login.php');
 
 
 }
